@@ -3,10 +3,10 @@
 ## Table of Contents
 
 - [Description](#Description)
-- [Environment ](#Environment )
-- [Further information ](#Furtherinformation)
-- [Requirements](#Requirements)
-- [File Contents](#FileContents)
+- [Environment ](#Environment)
+- [Further information ](#Furtherinformation )
+- [Requirements](#Requirements )
+- [File Contents](#FileContents )
 - [Usage and Installation](#UsageandInstallation)
 - [Compilation](#Compilation)
 - [Example usage](#Exampleusage)
