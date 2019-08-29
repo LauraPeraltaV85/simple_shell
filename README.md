@@ -10,8 +10,8 @@
 - [Usage and Installation](#UsageandInstallation)
 - [Compilation](#Compilation)
 - [Example usage](#Exampleusage)
-- [Built With](#built-with )
-- [Acknowledgments](#acknowledgments )
+- [Built With](#built-with)
+- [Acknowledgments](#acknowledgments)
 
 ### Description 📄
 Shell is a command programming language that executes commands read from a terminal or a file.
