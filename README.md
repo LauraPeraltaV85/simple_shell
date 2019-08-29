@@ -1,4 +1,4 @@
-## SIMPLE_shell 👨‍💻
+## SIMPLE_SHELL 👨‍💻
 ![simple_shell](https://i.ibb.co/hMqWb24/terminal-shell-console.jpg)
 ## Table of Contents
 
