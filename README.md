@@ -7,7 +7,7 @@
 - [Further information ](#Furtherinformation)
 - [Requirements](#Requirements)
 - [File Contents](#FileContents)
-- [Usage and Installation](#UsageandInstallation )
+- [Usage and Installation](#UsageandInstallation)
 - [Compilation](#Compilation)
 - [Example usage](#Exampleusage)
 - [Built With](#built-with )
