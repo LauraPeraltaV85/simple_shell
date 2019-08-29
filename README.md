@@ -9,7 +9,7 @@
 - [File Contents](#FileContents)
 - [Usage and Installation](#UsageandInstallation)
 - [Compilation](#Compilation)
-- [Example usage](#Example usage)
+- [Example usage](#Exampleusage)
 - [Built With](#built-with)
 - [Acknowledgments](#acknowledgments)
 
