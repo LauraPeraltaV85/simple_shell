@@ -8,7 +8,7 @@
 - [Requirements](#Requirements)
 - [File Contents](#FileContents)
 - [Usage and Installation](#UsageandInstallation )
-- [Compilation](#Compilation )
+- [Compilation](#Compilation)
 - [Example usage](#Exampleusage )
 - [Built With](#built-with)
 - [Acknowledgments](#acknowledgments)
