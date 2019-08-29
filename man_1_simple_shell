@@ -1,0 +1,128 @@
+.TH man 1 "28 Ago 2019" "1.0" "Simple Shell Man Page"
+.SH NAME
+    hsh - interface to the Unix system kernel
+
+.SH SYNOPSIS
+#include <stdio.h>,
+<stdlib.h>,
+<unistd.h>,
+<string.h>,
+<signal.h>,
+<sys/wait.h>,
+<sys/types.h>,
+<sys/stat.h>,
+<errno.h>
+
+    \fB$\fR [command] [-flags ]
+
+.SH DESCRIPTION
+A Shell provides you with an interface to the system kernel. It gathers input from you and  executes programs based on that input. When a program  finishes executing, it displays that command's output followed by a new prompt.
+
+.SH PROMPT
+The  prompt,  $,  which  is  called  the command prompt, is issued by the shell. While the prompt is displayed, you can type a command. Shell reads your input after you press Enter. It determines the command you want to execut by looking at the first word of your input. A word is an unbroken set of characters. Spaces and tabs are taken as delimiters to separate words.
+
+
+.SH OPTIONS
+
+.SS Built-ins
+
+.IP \fBenv or printenv\fR
+Prints the current environment
+
+.IP \fBexit\fR
+Causes the shell to exit with the exit status  specified by n. If n is omitted then the exit
+status is that of the last command executed. (An end of file will  also exit  from the shell).
+
+.SS Examples of Commands
+
+.IP \fBpwd\fR
+Prints the name of the current directory. man pwd for more info.
+
+.IP \fBls\fR
+Lists the files in the current working directory. man ls for more info.
+
+.IP \fBtouch\fR
+Update the access date and/or modification date of a computer file or directory.
+
+.IP \fBrm\fR
+Remove objects such as computer files, directories and symbolic links.
+
+.IP \fBsh\fR
+A shell program written by Ken Thompson. man sh for more info.
+
+.SH ENVIRONMENT
+
+.SS Examples of Environment Variables
+
+.IP \fBPATH\fR
+A list of directories for executables.
+
+.IP \fBHOME\fR
+The default home directory of the system
+
+.IP \fBPWD\fR
+The current parent directory
+
+.SH SEE ALSO
+    sh(1),  environ(7),  execve(2), getline(3),
+    malloc(3), signal(2), strtok(3), wait(2), _exit(2).
+
+.SH EXAMPLE CODE
+
+.SS From Main Function:
+
+
+/**
+ * main - entry point
+ *
+ * Return: 0 on success and -1 on failure
+ */
+
+int main(void)
+{
+
+    char *buffer = NULL, **args = NULL, *first_arg = NULL;
+    size_t size = 0;
+    struct stat st;
+    int run = 0, i = 1;
+
+    while (1)
+    {
+    write(STDIN_FILENO, "#cisfun$ ", 9);
+        buffer = getline_func(buffer, size);
+    if (buffer == NULL)
+        continue;
+    args = tokenizer(buffer);
+        if (args == NULL)
+            return (-1);
+    first_arg = args[0];
+    if (builtins(args, buffer) == -1)
+    {
+    if (stat(args[0], &st) == 0)
+        run = command(args);
+    else if (stat(args[0], &st) == -1)
+    {
+        args[0] = path(args[0]);
+        if (args[0] == NULL)
+        {
+            error_msg(first_arg, i);
+         i++;
+        }
+        else
+         run = command(args);
+    }
+     if (run == -1)
+      {
+        error_msg(first_arg, i);
+        i++;
+       }
+        free(args);
+        free(buffer);
+        buffer = NULL;
+       }
+     }
+    return (0);
+ }
+
+.SH AUTHORS
+Written by Laura Peralta and Julian Gaitan
